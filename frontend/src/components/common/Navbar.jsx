@@ -290,14 +290,14 @@ const Navbar = () => {
                             onClick={toggleMobileMenu}
                         >
                             Home
-                        </Link>
+                        </a>
                         <a
                             href={getProductsRoute()}
                             className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${isActive(getProductsRoute()) ? 'text-green-600' : ''}`}
                             onClick={toggleMobileMenu}
                         >
                             Products
-                        </Link>
+                        </a>
                         
                         <Link to="/about" className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${isActive('/about')}`} onClick={toggleMobileMenu}>
                             About
