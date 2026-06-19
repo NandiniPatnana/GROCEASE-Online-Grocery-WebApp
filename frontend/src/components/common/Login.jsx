@@ -54,7 +54,7 @@ const Login = () => {
   
     if (validateForm()) {
       try {
-        const response = await axios.post("https://grocease-backend.onrender.com", formData); 
+        const response = await axios.post("http://localhost:5432/api/common/login", formData); 
   
         if (response.status === 200) {
           // Store the token in sessionStorage
