@@ -62,7 +62,7 @@ const Profile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put('http://localhost:5432/api/users/profile', formData);
+            const response = await axios.put('https://grocease-backend.onrender.com', formData);
             setUser(response.data);
             setIsEditing(false);
             setSuccessMessage('Profile updated successfully!');

@@ -35,7 +35,7 @@ const AddProduct = () => {
   
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5432/api/admin/add-product", product);
+      const response = await axios.post("https://grocease-backend.onrender.com", product);
       setMessage("Product added successfully!");
       setProduct({ 
         name: "", 

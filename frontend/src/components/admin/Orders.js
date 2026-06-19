@@ -35,7 +35,7 @@ const Orders = () => {
   const fetchOrders = async () => {
     try {
       console.log('Fetching orders...');
-      const response = await axios.get('http://localhost:5432/api/admin/orders');
+      const response = await axios.get('https://grocease-backend.onrender.com');
       console.log('Response:', response.data);
       
       if (response.data.success) {
