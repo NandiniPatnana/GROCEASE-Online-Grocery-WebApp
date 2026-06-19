@@ -163,7 +163,7 @@ const Navbar = () => {
                         >
                             <Home size={22} />
                             <span>Home</span>
-                        </Link>
+                        </a>
                         
                         <a
                             href={getProductsRoute()}
@@ -171,7 +171,7 @@ const Navbar = () => {
                         >
                             <Package size={22} />
                             <span>Products</span>
-                        </Link>
+                        </a>
                         
                         <Link to="/about" className={`hover:text-green-600 transition-colors duration-300 flex items-center ${isActive('/about')}`}>
                             <Info size={18} className="mr-1" />
