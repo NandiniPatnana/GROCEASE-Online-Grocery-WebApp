@@ -46,18 +46,14 @@ const Cart = () => {
     }
   };
 
-  // useEffect(() => {
-  //   setAuthHeader(axios);
-  //   fetchCart();
-  // }, [navigate]);
+  useEffect(() => {
+    setAuthHeader(axios);
+    fetchCart();
+  }, [navigate]);
 
 
   
-useEffect(() => {
-  setAuthHeader(axios);
-  fetchCart();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [fetchCart]);
+
 
   // Function to handle quantity change
   const handleQuantityChange = (productId, newQuantity) => {
