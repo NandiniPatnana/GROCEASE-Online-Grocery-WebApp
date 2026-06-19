@@ -69,7 +69,7 @@ const Footer = () => {
               Fresh groceries delivered to your doorstep. Quality products, fast delivery, supporting local farmers.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="#" aria-label="Facebook" className="text-gray-500 hover:text-green-600 transition-colors">
+              {/* <a href="#" aria-label="Facebook" className="text-gray-500 hover:text-green-600 transition-colors">
                 <Facebook size={20} />
               </a>
               <a href="#" aria-label="Twitter" className="text-gray-500 hover:text-green-600 transition-colors">
@@ -77,7 +77,38 @@ const Footer = () => {
               </a>
               <a href="#" aria-label="Instagram" className="text-gray-500 hover:text-green-600 transition-colors">
                 <Instagram size={20} />
-              </a>
+              </a> */}
+
+
+              <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="text-gray-500 hover:text-green-600 transition-colors"
+            >
+              <Facebook size={20} />
+            </a>
+
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              className="text-gray-500 hover:text-green-600 transition-colors"
+            >
+              <Twitter size={20} />
+            </a>
+
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-gray-500 hover:text-green-600 transition-colors"
+            >
+              <Instagram size={20} />
+            </a>
             </div>
             <div className="space-y-2 pt-2">
               <div className="flex items-center space-x-2 text-gray-600">
@@ -161,7 +192,7 @@ const Footer = () => {
               <p className="text-gray-600 mt-1">Shop groceries on the go with our mobile app</p>
             </div>
             <div className="flex space-x-4">
-              <a href="#" className="flex items-center bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+              {/* <a href="#" className="flex items-center bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="mr-2">
                   <path d="M17.5 12c0-3.04-2.46-5.5-5.5-5.5s-5.5 2.46-5.5 5.5c0 2.76 2.02 5.03 4.66 5.44v-3.82H9.83V12h1.33v-1.16c0-1.31.78-2.04 1.99-2.04.57 0 1.18.1 1.18.1v1.3h-.66c-.65 0-.86.4-.86.82V12h1.46l-.23 1.62h-1.23v3.82c2.64-.41 4.66-2.68 4.66-5.44z" />
                 </svg>
@@ -172,7 +203,28 @@ const Footer = () => {
                   <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-4.56 16H5.5c-.45 0-.67-.54-.35-.85l3.44-3.44-1.06-1.06L4.1 16.09A.7.7 0 0 0 4.5 17h2.94v1zM19.5 7c.45 0 .67.54.35.85l-3.44 3.44 1.06 1.06 3.43-3.44c.33-.33.2-.91-.4-.91h-2.94V7h1.94z" />
                 </svg>
                 Play Store
-              </a>
+              </a> */}
+
+
+              <a
+  href="https://apps.apple.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
+>
+  ...
+  App Store
+</a>
+
+<a
+  href="https://play.google.com/store"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
+>
+  ...
+  Play Store
+</a>
             </div>
           </div>
         </div>
