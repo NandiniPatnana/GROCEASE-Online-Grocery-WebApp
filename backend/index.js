@@ -28,5 +28,6 @@ app.use('/', adminOrderRoutes); // Mount at root since routes include full path
 app.use('/api/common', commonRoutes);
 app.use('/api/users', userRoutes);
 
-const PORT = 5432;
+// const PORT = 5432;
+const PORT = process.env.PORT || 5432;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
