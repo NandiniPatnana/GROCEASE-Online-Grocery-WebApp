@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { getToken, setAuthHeader } from "../../utils/auth";
+// import { getToken, setAuthHeader } from "../../utils/auth";
+import { setAuthHeader } from "../../utils/auth";
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -9,10 +10,16 @@ const MyOrders = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    setAuthHeader(axios);
-    fetchOrders();
-  }, []);
+  // useEffect(() => {
+  //   setAuthHeader(axios);
+  //   fetchOrders();
+  // }, []);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
+  setAuthHeader(axios);
+  fetchOrders();
+}, []);
 
   const fetchOrders = async () => {
     try {

@@ -1,4 +1,5 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+// import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { ShoppingCart, User, Menu, X, LogOut, LogIn, Home, Info, Package, PhoneCall, Search } from "lucide-react";
 
