@@ -52,11 +52,12 @@ const Cart = () => {
   // }, [navigate]);
 
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  
 useEffect(() => {
   setAuthHeader(axios);
   fetchCart();
-}, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [fetchCart]);
 
   // Function to handle quantity change
   const handleQuantityChange = (productId, newQuantity) => {

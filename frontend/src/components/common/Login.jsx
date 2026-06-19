@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+// import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { setAuthHeader } from '../../utils/auth';
 
@@ -9,7 +10,7 @@ const Login = () => {
     password: '',
     rememberMe: false
   });
-  const navigate=useNavigate();
+  // const navigate=useNavigate();
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
