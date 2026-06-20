@@ -27,7 +27,7 @@ const Cart = () => {
         return;
       }
 
-      const response = await axios.get(`http://localhost:5432/api/customer/get-cart?userEmail=${userEmail}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/customer/get-cart?userEmail=${userEmail}`);
       
       if (response.data.success) {
         setCartItems(response.data.cart?.products || []);
@@ -75,7 +75,7 @@ const Cart = () => {
         return;
       }
 
-      const response = await axios.post('http://localhost:5432/api/customer/remove-from-cart', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/customer/remove-from-cart`, {
         productId,
         userEmail
       });
@@ -111,7 +111,7 @@ const Cart = () => {
         pincode: "123456"
       };
 
-      const response = await axios.post('http://localhost:5432/api/customer/orders/place-order', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/customer/orders/place-order`, {
         userEmail,
         shippingAddress,
         cartItems // Send current cart items to ensure consistency

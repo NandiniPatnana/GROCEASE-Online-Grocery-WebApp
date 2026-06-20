@@ -35,7 +35,7 @@ const Orders = () => {
   const fetchOrders = async () => {
     try {
       console.log('Fetching orders...');
-      const response = await axios.get('http://localhost:5432/api/admin/orders');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/admin/orders`);
       console.log('Response:', response.data);
       
       if (response.data.success) {
@@ -64,7 +64,7 @@ const Orders = () => {
   const updateOrderStatus = async (orderId, newStatus) => {
     setUpdatingStatus(orderId);
     try {
-      const response = await axios.post(`http://localhost:5432/api/admin/orders/${orderId}`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/admin/orders/${orderId}`, {
         status: newStatus
       });
 

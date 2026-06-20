@@ -32,7 +32,7 @@ const ManageProducts = () => {
     
     setLoading(true);
     try {
-      await axios.put(`http://localhost:5432/api/admin/products/${editProduct._id}`, editProduct);
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/admin/products/${editProduct._id}`, editProduct);
       setProducts(products.map((p) => (p._id === editProduct._id ? editProduct : p)));
       setMessage("Product updated successfully!");
       setEditProduct(null);
@@ -48,7 +48,7 @@ const ManageProducts = () => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
 
     try {
-      await axios.delete(`http://localhost:5432/api/admin/products/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/admin/products/${id}`);
       setProducts(products.filter((product) => product._id !== id));
       setMessage("Product deleted successfully!");
     } catch (error) {

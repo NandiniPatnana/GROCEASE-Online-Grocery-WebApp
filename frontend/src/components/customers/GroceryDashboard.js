@@ -22,7 +22,7 @@ const GroceryDashboard = () => {
     setError("");
 
     try {
-      const response = await axios.get("http://localhost:5432/api/admin/products");
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/admin/products`);
       setProducts(response.data);
     } catch (err) {
       console.error("Error fetching products:", err);
@@ -52,7 +52,7 @@ const GroceryDashboard = () => {
     setCartMessage("");
   
     try {
-        const response = await axios.post("http://localhost:5432/api/customer/add-to-cart", { 
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/customer/add-to-cart`, { 
         productId,
         userEmail: sessionStorage.getItem('userEmail')
       });

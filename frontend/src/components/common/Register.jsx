@@ -69,7 +69,7 @@ const Register = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch("http://localhost:5432/api/common/register", {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/common/register`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

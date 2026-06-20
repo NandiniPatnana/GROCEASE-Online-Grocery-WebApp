@@ -24,7 +24,7 @@ const MyOrders = () => {
         return;
       }
 
-      const response = await axios.get(`http://localhost:5432/api/customer/orders/get-orders?userEmail=${userEmail}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/customer/orders/get-orders?userEmail=${userEmail}`);
       
       if (response.data.success) {
         setOrders(response.data.orders);

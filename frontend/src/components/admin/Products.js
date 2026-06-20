@@ -14,7 +14,7 @@ const Products = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5432/api/admin/products');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/admin/products`);
       setProducts(response.data);
       setLoading(false);
     } catch (err) {
@@ -29,7 +29,7 @@ const Products = () => {
       return;
     }
     try {
-      await axios.delete(`http://localhost:5432/api/admin/products/${productId}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/api/admin/products/${productId}`);
       fetchProducts();
     } catch (err) {
       console.error('Error deleting product:', err);
@@ -48,7 +48,7 @@ const Products = () => {
     }
 
     try {
-      await axios.put(`http://localhost:5432/api/admin/products/${productId}`, {
+      await axios.put(`${process.env.REACT_APP_API_URL}/api/admin/products/${productId}`, {
         quantity: quantityNumber
       });
       fetchProducts();

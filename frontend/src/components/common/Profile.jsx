@@ -29,7 +29,7 @@ const Profile = () => {
 
     const fetchUserProfile = async () => {
         try {
-            const response = await axios.get('http://localhost:5432/api/users/profile');
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/users/profile`);
             setUser(response.data);
             setFormData({
                 name: response.data.name || '',
@@ -79,7 +79,7 @@ const Profile = () => {
             return;
         }
         try {
-            await axios.put('http://localhost:5432/api/users/change-password', {
+            await axios.put(`${process.env.REACT_APP_API_URL}/api/users/change-password`, {
                 currentPassword: passwordData.currentPassword,
                 newPassword: passwordData.newPassword
             });
