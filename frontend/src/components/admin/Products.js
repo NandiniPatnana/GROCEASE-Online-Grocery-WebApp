@@ -14,7 +14,7 @@ const Products = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('https://grocease-backend.onrender.com');
+      const response = await axios.get('http://localhost:5432/api/admin/products');
       setProducts(response.data);
       setLoading(false);
     } catch (err) {

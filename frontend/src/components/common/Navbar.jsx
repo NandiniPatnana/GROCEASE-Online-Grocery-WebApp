@@ -1,5 +1,4 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { ShoppingCart, User, Menu, X, LogOut, LogIn, Home, Info, Package, PhoneCall, Search } from "lucide-react";
 
@@ -121,9 +120,9 @@ const Navbar = () => {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <div className="flex items-center">
-                        <Link to={getHomeRoute()} className="flex items-center">
+                        <a href={getHomeRoute()} className="flex items-center">
                             <span className="text-2xl font-bold text-green-600 tracking-wider">GROCEASE</span>
-                        </Link>
+                        </a>
                     </div>
 
                     {/* Search Bar - Desktop */}
@@ -172,26 +171,25 @@ const Navbar = () => {
                             <span>Products</span>
                         </a>
                         
-                        <Link to="/about" className={`hover:text-green-600 transition-colors duration-300 flex items-center ${isActive('/about')}`}>
+                        <a href="/about" className={`hover:text-green-600 transition-colors duration-300 flex items-center ${isActive('/about')}`}>
                             <Info size={18} className="mr-1" />
                             <span>About</span>
-                        </Link>
+                        </a>
                         
-                        <Link to="/contact" className={`hover:text-green-600 transition-colors duration-300 flex items-center ${isActive('/contact')}`}>
+                        <a href="/contact" className={`hover:text-green-600 transition-colors duration-300 flex items-center ${isActive('/contact')}`}>
                             <PhoneCall size={18} className="mr-1" />
                             <span>Contact</span>
-                        </Link>
+                        </a>
                         
                         {sessionStorage.getItem('isAdmin') !== 'true' && (
-                            // <Link to="customer/cart" className="relative hover:text-green-600 transition-colors duration-300">
-                            <Link to="/customer/cart" className="relative hover:text-green-600 transition-colors duration-300">
+                            <a href="customer/cart" className="relative hover:text-green-600 transition-colors duration-300">
                                 <ShoppingCart size={22} />
                                 {cartCount > 0 && (
                                     <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                                         {cartCount}
                                     </span>
                                 )}
-                            </Link>
+                            </a>
                         )}
                         
                         {isLoggedIn ? (
@@ -206,13 +204,13 @@ const Navbar = () => {
                                 
                                 {isUserMenuOpen && (
                                     <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
-                                        <Link to={getOrdersLink()} className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">
+                                        <a href={getOrdersLink()} className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">
                                             My Orders
-                                        </Link>
+                                        </a>
                                         {isAdmin && (
-                                            <Link to="/admin/dashboard" className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">
+                                            <a href="/admin/dashboard" className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600">
                                                 Admin Dashboard
-                                            </Link>
+                                            </a>
                                         )}
                                         <div className="border-t border-gray-100 my-1"></div>
                                         <button 
@@ -228,26 +226,26 @@ const Navbar = () => {
                                 )}
                             </div>
                         ) : (
-                            <Link to="/login">
+                            <a href="/login">
                                 <button className="flex items-center bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition-colors duration-300">
                                     <LogIn size={18} className="mr-1" />
                                     <span>Sign In</span>
                                 </button>
-                            </Link>
+                            </a>
                         )}
                     </div>
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center space-x-4">
                         {sessionStorage.getItem('isAdmin') !== 'true' && (
-                            <Link to="/cart" className="relative text-gray-600 hover:text-green-600">
+                            <a href="/cart" className="relative text-gray-600 hover:text-green-600">
                                 <ShoppingCart size={22} />
                                 {cartCount > 0 && (
                                     <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                                         {cartCount}
                                     </span>
                                 )}
-                            </Link>
+                            </a>
                         )}
                         
                         <button 
@@ -298,21 +296,21 @@ const Navbar = () => {
                             Products
                         </a>
                         
-                        <Link to="/about" className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${isActive('/about')}`} onClick={toggleMobileMenu}>
+                        <a href="/about" className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${isActive('/about')}`} onClick={toggleMobileMenu}>
                             About
-                        </Link>
+                        </a>
                         
-                        <Link to="/contact" className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${isActive('/contact')}`} onClick={toggleMobileMenu}>
+                        <a href="/contact" className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ${isActive('/contact')}`} onClick={toggleMobileMenu}>
                             Contact
-                        </Link>
+                        </a>
                         
                         {isLoggedIn && (
                             <>
                                 <div className="border-t border-gray-200 my-2"></div>
-                                <Link to={getOrdersLink()} className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-green-50 hover:text-green-600 transition-colors duration-300">
+                                <a href={getOrdersLink()} className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-green-50 hover:text-green-600 transition-colors duration-300">
                                     <Package size={18} className="mr-2" />
                                     <span>My Orders</span>
-                                </Link>
+                                </a>
                                 
                                 {isAdmin && (
                                     <>
@@ -321,17 +319,17 @@ const Navbar = () => {
                                             ADMIN
                                         </div>
                                         
-                                        <Link to="/admin/dashboard" className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-green-50 hover:text-green-600 transition-colors duration-300">
+                                        <a href="/admin/dashboard" className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-green-50 hover:text-green-600 transition-colors duration-300">
                                             <span>Dashboard</span>
-                                        </Link>
+                                        </a>
                                         
-                                        <Link to="/admin/orders" className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-green-50 hover:text-green-600 transition-colors duration-300">
+                                        <a href="/admin/orders" className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-green-50 hover:text-green-600 transition-colors duration-300">
                                             <span>Manage Orders</span>
-                                        </Link>
+                                        </a>
                                         
-                                        <Link to="/admin/products" className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-green-50 hover:text-green-600 transition-colors duration-300">
+                                        <a href="/admin/products" className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-green-50 hover:text-green-600 transition-colors duration-300">
                                             <span>Manage Products</span>
-                                        </Link>
+                                        </a>
                                     </>
                                 )}
                             </>
@@ -350,12 +348,12 @@ const Navbar = () => {
                         </div>
                     ) : (
                         <div className="px-3 pb-3">
-                            <Link to="/login" className="block w-full">
+                            <a href="/login" className="block w-full">
                                 <button className="w-full flex items-center justify-center bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition-colors duration-300">
                                     <LogIn size={18} className="mr-2" />
                                     <span>Sign In</span>
                                 </button>
-                            </Link>
+                            </a>
                         </div>
                     )}
                 </div>
